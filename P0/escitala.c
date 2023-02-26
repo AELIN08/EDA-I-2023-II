@@ -32,17 +32,31 @@ int main(){
 
         }
     }
+    return 0;
 }
 
 void CrearMensaje() {
+    int re, col, 1, j, k=0;
+    
+    print("ingrese el tamaño de la escitala: ");
+    sacnf("%i",&ren);
+    prinnt ("\n tamaño de columnas: ");
+    sacanf("%i", &col);
+    
     char escitala [ren][col];
     char texto [ren * col];
 
-    printf("Escriba e texto a decifrar: \n");
+    printf("Escriba el texto a decifrar: \n");
     scanf ("%s", texto);
 
-    for (i=0;i<col;i++)
-        for (j=0;j<ren; j++)
-        
-
+    for (i=0; i<col; i++)
+        for (j=0; j<ren; j++)
+        escitala [j][i]=texto [k++];
+    
+    printf ("texto en la tira: \n")
+    for(i=?; i<col; i++)
+        for (j=0; j<ren; j++)
+        print("%c \n", escitala [j][i]);
 }
+
+void des
