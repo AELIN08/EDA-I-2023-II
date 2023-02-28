@@ -76,7 +76,7 @@ void Alfil(){
     printf ("  _______________________________\n");
 }
 
-void Torre();
+void Torre(){
    int x, y, f , c;
 	char tablero[8][8];
 	
