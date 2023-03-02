@@ -1,5 +1,5 @@
  #include <stdio.h>
- 
+
 void Alfil();
 void Torre();
 
@@ -13,7 +13,7 @@ int main(){
         printf("2. Torre \n");
         printf("3. Salir \n ");
         printf("¿para cual quieres ver?: ");
-        scanf ("%i", &opcion);
+        scanf ("%d", &opcion);
         
         switch (opcion){
 
