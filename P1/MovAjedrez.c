@@ -1,5 +1,7 @@
-#include <stdio.h>
-
+ #include <stdio.h>
+ 
+void Alfil();
+void Torre();
 
 int main(){
     short opcion=0;
