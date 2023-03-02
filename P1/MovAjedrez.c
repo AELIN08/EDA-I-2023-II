@@ -13,7 +13,7 @@ int main(){
         printf("2. Torre \n");
         printf("3. Salir \n ");
         printf("¿para cual quieres ver?: ");
-        scanf ("%i", &opcion);
+        scanf ("%hi", &opcion);
         
         switch (opcion){
 
@@ -80,7 +80,7 @@ void Alfil(){
 
 void Torre(){
    int x, y, f , c;
-	char tablero[8][8];
+	int tablero[8][8];
 	
 	printf(" *** ALFIL ***");
 	
