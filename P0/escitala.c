@@ -13,7 +13,7 @@ int main(){
         printf("2. Decifrar mensaje. \n");
         printf("3. Salir.\n ");
         printf("¿Que desa realizar?: ");
-        scanf ("%i", &opcion);
+        scanf ("%hi", &opcion);
         
         switch (opcion){
 
@@ -79,7 +79,7 @@ void DecifrarMensaje(){
     for (i=0; i<col; i++)
         for (j=0; j<ren; j++)
             escitala [j][i]=texto [k++];
-    printf("el texto decifrado es:\n\t")
+    printf("el texto decifrado es:\n\t");
     for(i=0; i<ren; i++)
         for(j=0; j<col; j++)
         printf("%c", escitala[i][j]);
