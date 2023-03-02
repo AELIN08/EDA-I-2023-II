@@ -13,7 +13,7 @@ int main(){
         printf("2. Torre \n");
         printf("3. Salir \n ");
         printf("¿para cual quieres ver?: ");
-        scanf ("%d", &opcion);
+        scanf ("%i", &opcion);
         
         switch (opcion){
 
