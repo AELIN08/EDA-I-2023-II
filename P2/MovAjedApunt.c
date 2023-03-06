@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void Queen();
 void King();
@@ -37,7 +38,8 @@ int main(){
     return 0;
 }
 void Queen(){
-    	int x, y, f , c;
+    int x, y, f , c;
+    int *aptx, *apty ;
 	char tablero[8][8];
 	
 	printf(" *** REINA ***");
@@ -51,17 +53,20 @@ void Queen(){
     printf ("    1   2   3   4   5   6   7   8\n ");
 	printf ("  _______________________________\n");
 	
+    aptx=&x;
+    apty=&y;
+
     for(f=1;f<=8;f++){
         
         printf("%i |",f);
-    
+
         for(c=1;c<=8;c++){
             
-            if(f==x && c==y)
+            if(f==*aptx && c==*apty)
 			    printf(" Q ");
 			    
 			    else
-		            if (((f+c)==(x+y)||(f-c)==(x-y)) || (f==x||c==y))
+		            if ((f+c)==(*aptx+*apty) || (f-c)==(*aptx-*apty) || (f==*aptx||c==*apty))
 				        printf(" X ");
 					
 			            else 
@@ -79,7 +84,9 @@ void Queen(){
 }
 
 void King(){
-     int x, y, f , c;
+    int x, y, f , c;
+    int *aptx, *apty ;
+
 	int tablero[8][8];
 	
 	printf(" *** R E Y ***");
@@ -89,6 +96,10 @@ void King(){
 	scanf("%i", &x);
 	printf("\nColumna: ");
 	scanf("%i", &y);
+	
+	aptx=&x;
+    apty=&y;
+    
 	printf("---------------------------------------------------\n");
     printf ("    1   2   3   4   5   6   7   8\n ");
 	printf ("  _______________________________\n");
@@ -99,11 +110,11 @@ void King(){
     
         for(c=1;c<=8;c++){
             
-            if(f==x && c==y)
+            if(f==*aptx && c==*apty)
 			    printf(" R ");
 			   
 			    else
-		            if((abs(f - x) <= 1) && (abs(c - y) <= 1))
+		            if((abs(f - *aptx) <= 1) && (abs(c - *apty) <= 1))
 				        printf(" X ");
 					
 			            else 
@@ -119,4 +130,5 @@ void King(){
     }
     printf ("  _______________________________\n");
 }
+
         
