@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void Queen();
 void King();
@@ -62,10 +61,12 @@ void Queen(){
 
         for(c=1;c<=8;c++){
             
+            // uso de * antes del nombre para acceder al valor almacenado
             if(f==*aptx && c==*apty)
 			    printf(" Q ");
 			    
 			    else
+                    // sentencia para el rango del movimiento de la reina
 		            if ((f+c)==(*aptx+*apty) || (f-c)==(*aptx-*apty) || (f==*aptx||c==*apty))
 				        printf(" X ");
 					
@@ -85,7 +86,7 @@ void Queen(){
 
 void King(){
     int x, y, f , c;
-    int *aptx, *apty ;
+    int *aptx, *apty ; //declaracion de los apuntadores
 
 	int tablero[8][8];
 	
@@ -97,6 +98,8 @@ void King(){
 	printf("\nColumna: ");
 	scanf("%i", &y);
 	
+    /*acceder a la direccion de la
+    variable de tal forma obtiene el valor*/
 	aptx=&x;
     apty=&y;
     
@@ -109,11 +112,12 @@ void King(){
         printf("%i |",f);
     
         for(c=1;c<=8;c++){
-            
+            // uso de * antes del nombre para acceder al valor almacenado
             if(f==*aptx && c==*apty)
 			    printf(" R ");
 			   
 			    else
+                    // sentencia para el rango del movimiento del rey
 		            if((abs(f - *aptx) <= 1) && (abs(c - *apty) <= 1))
 				        printf(" X ");
 					
