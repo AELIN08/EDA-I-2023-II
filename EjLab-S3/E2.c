@@ -26,7 +26,7 @@ void llenarArreglo(struct pelicula arreglo [TAM]){
 
     for (iesimo=0 ; iesimo<TAM ; iesimo++) {
         struct pelicula movie;
-    printf("####### Película %d #######\n", iesimo+1);
+    printf("\n\n####### Película %d #######\n", iesimo+1);
     printf("Ingrese nombre película:");
     setbuf(stdin, NULL);
     scanf("%s", movie.nombre);
