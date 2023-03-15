@@ -162,7 +162,7 @@ void Torre(struct  coordenadas coordenadasPieza){
     int x, y, f , c;
 	int tablero[8][8];
 	
-	printf("\n *** ALFIL ***");
+	printf("\n *** TORRE ***");
 	
 	printf("\nIngrese las coordenadas para poosicionar la pieza\n");
 	printf("Fila: ");
