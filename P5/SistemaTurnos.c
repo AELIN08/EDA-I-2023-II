@@ -131,7 +131,7 @@ int rear(struct Queue* queue)
 }
 
 main(){
-	int i, lastItem;
+	int i, lastItem; //variables para los elementos de pila y donde se va a guardar el ultipo valor de pila y el q se va a encolar
 
     struct Stack* stack = createStack(10);
 	for(i=10;i>0;i--){
@@ -158,7 +158,7 @@ main(){
 					printf("ya no hay turnos disponibles :c");
 				}
 				else{
-					//Para obtener el ultimo elemento de la pila y agregarlo a cla cola
+					//Para obtener el ultimo elemento de la pila y agregarlo a cola
 					lastItem=pop(stack);
 					enqueue(queue, lastItem);
 					printf("El elemento se encuentra formado en la cola con el turno: %d", lastItem);
