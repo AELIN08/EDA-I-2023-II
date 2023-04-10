@@ -170,12 +170,12 @@ main(){
 				printf("\n************************************************************************\n\n");
 				if (isStackEmpty (stack)) {
 					printf("Ultimo elemento en tope de la pila: vacio");
-					printf("Ultimo elemento formado en la cola: %d\n", rear(queue));
+					
 				}
 				else
                 	printf("Ultimo elemento en tope de la pila: %d\n", peek(stack));
 				
-				printf("Ultimo elemento formado en la cola: %d\n", rear(queue));
+				printf("\nUltimo elemento formado en la cola: %d\n", rear(queue));
 				printf("\n\n************************************************************************\n");
                 return 0;
                 break;
