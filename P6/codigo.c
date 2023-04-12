@@ -1,17 +1,23 @@
 // Implementacion de una cola doble en C
 
 #include <stdio.h>
-#include <string.h>
+
 #define MAX 10
 
-void addFront(int *, int, int *, int *);
-void addRear(int *, int, int *, int *);
-int delFront(int *, int *, int *);
-int delRear(int *, int *, int *);
-void display(int *);
-int count(int *);
+// Implementacion de una cola doble en C
 
-void addFront(int *arr, int item, int *pfront, int *prear) {
+#include <stdio.h>
+
+#define MAX 10
+
+void addFront(char *, char, int *, int *);
+void addRear(char *, char, int *, int *);
+char delFront(char *, int *, int *);
+char delRear(char *, int *, int *);
+void display(char *);
+int count(char *);
+
+void addFront(char *arr, char item, int *pfront, int *prear) {
   int i, k, c;
 
   if (*pfront == 0 && *prear == MAX - 1) {
@@ -41,7 +47,7 @@ void addFront(int *arr, int item, int *pfront, int *prear) {
   }
 }
 
-void addRear(int *arr, int item, int *pfront, int *prear) {
+void addRear(char *arr, char item, int *pfront, int *prear) {
   int i, k;
 
   if (*pfront == 0 && *prear == MAX - 1) {
@@ -60,7 +66,7 @@ void addRear(int *arr, int item, int *pfront, int *prear) {
     for (i = *pfront - 1; i < *prear; i++) {
       k = i;
       if (k == MAX - 1)
-        arr[k] = 0;
+        arr[k] = ' ';
       else
         arr[k] = arr[i + 1];
     }
@@ -71,16 +77,16 @@ void addRear(int *arr, int item, int *pfront, int *prear) {
   arr[*prear] = item;
 }
 
-int delFront(int *arr, int *pfront, int *prear) {
-  int item;
+char delFront(char *arr, int *pfront, int *prear) {
+  char item;
 
   if (*pfront == -1) {
     printf("\nDeque esta vacia.\n");
-    return 0;
+    return ' ';
   }
 
   item = arr[*pfront];
-  arr[*pfront] = 0;
+  arr[*pfront] = ' ';
 
   if (*pfront == *prear)
     *pfront = *prear = -1;
@@ -90,8 +96,8 @@ int delFront(int *arr, int *pfront, int *prear) {
   return item;
 }
 
-int delRear(int *arr, int *pfront, int *prear) {
-  int item;
+char delRear(char *arr, int *pfront, int *prear) {
+  char item;
 
   if (*pfront == -1) {
     printf("\nDeque esta vacia.\n");
@@ -106,18 +112,16 @@ int delRear(int *arr, int *pfront, int *prear) {
   return item;
 }
 
-//funcion para mostrar la cola
-void display(int *arr) {
+void display(char *arr) {
   int i;
 
   printf("\n frente:  ");
   for (i = 0; i < MAX; i++)
-    printf("  %d", arr[i]);
-  printf("  :parte trasera");
+    printf("  %c", arr[i]);
+    printf("  :parte trasera");
 }
 
-//funcion para contar los elementos dentro de la cola
-int count(int *arr) {
+int count(char *arr) {
   int c = 0, i;
 
   for (i = 0; i < MAX; i++) {
@@ -126,11 +130,37 @@ int count(int *arr) {
   }
   return c;
 }
+
 int main() {
-  char arr[MAX];
+  char arr[MAX]; // arreglo para almacenar la palabra
   int front, rear, i, n;
 
   front = rear = -1;
-    arr[i] = 0;
+  for (i = 0; i < MAX; i++)
+    arr[i] = '\0'; // inicializar el arreglo con el carácter nulo
 
-  printf("PALABRA PALINDROMA O NO PALINDROMA?\n\n");
+  // agregar caracteres al frente y al final de la cola doble
+  addRear(arr, 'o', &front, &rear);
+  addFront(arr, 'h', &front, &rear);
+  addRear(arr, 'l', &front, &rear);
+  addFront(arr, 'e', &front, &rear);
+  addRear(arr, '!', &front, &rear);
+
+  printf("Palabra en la cola doble: %s\n", arr);
+
+  // eliminar un carácter del frente y mostrar la palabra actualizada
+  i = delFront(arr, &front, &rear);
+  printf("Caracter eliminado del frente: %c\n", i);
+  printf("Palabra en la cola doble: %s\n", arr);
+
+  // agregar un carácter al final de la cola doble y mostrar la palabra actualizada
+  addRear(arr, 'y', &front, &rear);
+  printf("Palabra en la cola doble: %s\n", arr);
+  printf("cola:\n");
+    display(arr);
+  // contar el número de caracteres en la cola doble
+  n = count(arr);
+  printf("Numero total de caracteres en la cola doble: %d\n", n);
+
+  return 0;
+}
