@@ -1,14 +1,9 @@
 // Implementacion de una cola doble en C
 
 #include <stdio.h>
+#include <string.h>
 
-#define MAX 10
-
-// Implementacion de una cola doble en C
-
-#include <stdio.h>
-
-#define MAX 10
+#define MAX 30
 
 void addFront(char *, char, int *, int *);
 void addRear(char *, char, int *, int *);
@@ -122,7 +117,7 @@ void display(char *arr) {
 }
 
 int count(char *arr) {
-  int c = 0, i;
+  int c = 1 , i;
 
   for (i = 0; i < MAX; i++) {
     if (arr[i] != 0)
@@ -132,30 +127,20 @@ int count(char *arr) {
 }
 
 int main() {
-  char arr[MAX]; // arreglo para almacenar la palabra
-  int front, rear, i, n;
+  char arr[MAX], caracte; // arreglo para almacenar la palabra
+  int front, rear, i, n, MAX;
 
   front = rear = -1;
   for (i = 0; i < MAX; i++)
-    arr[i] = '\0'; // inicializar el arreglo con el carácter nulo
+    arr[i] = '\n'// inicializar el arreglo con el carácter nulo
 
-  // agregar caracteres al frente y al final de la cola doble
-  addRear(arr, 'o', &front, &rear);
-  addFront(arr, 'h', &front, &rear);
-  addRear(arr, 'l', &front, &rear);
-  addFront(arr, 'e', &front, &rear);
-  addRear(arr, '!', &front, &rear);
+  printf("Ingrese la palabra caracter por caracte");
+    // agregar caracteres al frente 
+  
+    addFront(arr, caract, &front, &rear);
 
   printf("Palabra en la cola doble: %s\n", arr);
 
-  // eliminar un carácter del frente y mostrar la palabra actualizada
-  i = delFront(arr, &front, &rear);
-  printf("Caracter eliminado del frente: %c\n", i);
-  printf("Palabra en la cola doble: %s\n", arr);
-
-  // agregar un carácter al final de la cola doble y mostrar la palabra actualizada
-  addRear(arr, 'y', &front, &rear);
-  printf("Palabra en la cola doble: %s\n", arr);
   printf("cola:\n");
     display(arr);
   // contar el número de caracteres en la cola doble
