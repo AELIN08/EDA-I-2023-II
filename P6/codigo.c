@@ -127,17 +127,23 @@ int count(char *arr) {
 }
 
 int main() {
-  char arr[MAX], caracte; // arreglo para almacenar la palabra
-  int front, rear, i, n, MAX;
+  char arr[MAX], word[MAX]; // arreglo para almacenar la palabra
+  int front, rear, i, n, size;
 
   front = rear = -1;
   for (i = 0; i < MAX; i++)
-    arr[i] = '\n'// inicializar el arreglo con el carácter nulo
+    arr[i] = ' ';// inicializar el arreglo con el carácter nulo
 
-  printf("Ingrese la palabra caracter por caracte");
-    // agregar caracteres al frente 
-  
-    addFront(arr, caract, &front, &rear);
+  printf("Ingrese la palabra");
+  scanf("%s",word);
+  size=strlen(word);
+
+  //agrega los caracteres de la palabra al arreglo
+  for(i=0;i<size;i++)
+    addFront(arr,word, &front, &rear);
+  //para finalizar la entrada de caracteres
+  arr[size]='0';
+
 
   printf("Palabra en la cola doble: %s\n", arr);
 
